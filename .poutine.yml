@@ -1,0 +1,24 @@
+# Configure poutine security scanner
+# See: https://github.com/boostsecurityio/poutine
+
+# Set rule configuration options
+rulesConfig:
+  pr_runs_on_self_hosted:
+    allowed_runners:
+      - ubuntu-slim  # GitHub's new built-in runner (not self-hosted)
+
+# GH-AW generates the safe-output configuration heredoc in each lock file. Its
+# injection rule conservatively taints that generated agent step with workflow
+# inputs, even though those values are configuration data, not shell commands.
+skip:
+  - rule: injection
+    job: agent
+    path:
+      - .github/workflows/feature-factory-debugger.lock.yml
+      - .github/workflows/feature-factory-finalizer.lock.yml
+      - .github/workflows/feature-factory-fixer.lock.yml
+      - .github/workflows/feature-factory-implementer.lock.yml
+      - .github/workflows/feature-factory-judge.lock.yml
+      - .github/workflows/feature-factory-orchestrator.lock.yml
+      - .github/workflows/feature-factory-planner.lock.yml
+      - .github/workflows/feature-factory-reviewer.lock.yml
