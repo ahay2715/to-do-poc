@@ -17,8 +17,8 @@ permissions:
   pull-requests: read
   actions: read
 engine:
-  id: claude
-  model: claude-sonnet-4.6
+  id: copilot
+  model: gpt-5.4-mini
 tools:
   github:
     toolsets: [default]

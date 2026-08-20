@@ -23,7 +23,7 @@ permissions:
   copilot-requests: write
 engine:
   id: copilot
-  model: gpt-5.6-luna
+  model: gpt-5.4-mini
 tools:
   github:
     toolsets: [default]

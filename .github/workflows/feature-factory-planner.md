@@ -12,8 +12,8 @@ permissions:
   issues: read
   pull-requests: read
 engine:
-  id: claude
-  model: claude-opus-4.5
+  id: copilot
+  model: gpt-5.4-mini
 tools:
   github:
     toolsets: [default]
